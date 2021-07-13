@@ -157,7 +157,7 @@ public class BaseCameraActivity extends AppCompatActivity {
                 }
                 if(OptionChoosen_3.isChecked())
                 {
-                    Toast.makeText(BaseCameraActivity.this, "Your story cannot be editted in standalone mode", Toast.LENGTH_SHORT).show();
+                    startCustomisingVideo();
                 }
             }
         });
@@ -450,5 +450,10 @@ public class BaseCameraActivity extends AppCompatActivity {
     }
     public static File getAndroidImageFolder() {
         return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+    }
+    public void startCustomisingVideo()
+    {
+        Intent intent = new Intent(this, VideoProcessActivity.class);
+        startActivity(intent);
     }
 }
